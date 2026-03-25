@@ -3,8 +3,9 @@ const endpoint = "https://api.giphy.com/v1/gifs/search?api_key=kGZcEAGsKKQPd8QTl
 
 const gifContainer = document.querySelector("#gif-container");
 const button = document.querySelector("#fetch-gif-btn");
+constsearchInput = document.querySelector("#search-input");
 
-async function getCats() {
+async function getGifs() {
     const response = await fetch(endpoint);
     const data = await response.json();
     const images = data.data.map(gif => gif.images.original.url);
